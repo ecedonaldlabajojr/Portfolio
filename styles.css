@@ -1,0 +1,172 @@
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: #222;
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 15px;
+
+}
+
+.header-underline {
+    width: 300px;
+    background-color: #bac964;
+    height: 2px;
+}
+
+h3 {
+    color: #bac964;
+    text-transform: uppercase;
+}
+
+/* ---- Navigation Bar ---- */
+
+.nav-link {
+    margin: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+a.active,
+a:hover {
+    color: #bac964 !important;
+    transition: 0.3s ease;
+}
+
+.navbar-bg {
+    background-color: #343a408c !important;
+}
+
+
+/* ---- Home ---- */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("images/network.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.landing-text {
+    position: relative;
+    left: 15vw;
+    color: rgba(255, 255, 255, .8);
+}
+
+.landing-text h1 {
+    font-family: 'Ubuntu', sans-serif;
+    text-overflow: 500;
+    font-size: 400%;
+    color: #bac964;
+    margin-left: -0.2rem;
+}
+
+
+/* ---- Projects ---- */
+#projects {
+    padding: 3% 0;
+}
+
+
+.card-padding {
+    padding: 2rem 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 15px;
+}
+
+.card a {
+    color: whitesmoke;
+    font-size: 130%;
+    text-decoration: none;
+}
+
+
+#projects img {
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.card-shadow {
+    box-shadow: 0 0.125rem 0.25rem rgba(255, 255, 255, .15)
+}
+
+.card-img-box {
+    overflow: hidden;
+}
+
+#projects img:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease;
+}
+
+.card .btn {
+    border-radius: 0;
+    font-size: 15px;
+}
+
+.project-name {
+    font-weight: 600;
+}
+
+
+
+
+/* ABOUT ME */
+#aboutme {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/keyboard-img.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+    display: relative;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+#aboutme img {
+    width: 100%;
+    filter: grayscale(10%);
+    border-radius: 50%;
+}
+
+.fab {
+    font-size: 3.5rem;
+    margin: 1.5rem;
+
+}
+
+.fab:hover {
+    transform: scale(1.2);
+
+}
+
+.fab.fa-css3 {
+    color: #2965f1;
+}
+
+
+.fab.fa-html5 {
+    color: #f06529;
+}
+
+.fab.fa-js {
+    color: #f0db4f;
+}
+
+.fab.fa-bootstrap {
+    color: #563d7c;
+}
+
+
+
+
+
+
+/* EXPERIENCE */
