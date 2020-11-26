@@ -121,16 +121,16 @@ a:hover {
 
 
 /* ABOUT ME */
-#aboutme {
+#about {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/keyboard-img.jpg") no-repeat center center fixed;
     background-size: cover;
-    height: 70vh;
+    height: 65vh;
     width: 100%;
     display: relative;
     color: rgba(255, 255, 255, 0.7) !important;
 }
 
-#aboutme img {
+#about img {
     width: 100%;
     filter: grayscale(10%);
     border-radius: 50%;
