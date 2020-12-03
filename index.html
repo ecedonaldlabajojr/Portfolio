@@ -17,6 +17,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Ubuntu:wght@500&display=swap"
         rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon-32x32.png">
 
@@ -38,11 +40,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mx-auto" id="navigation">
-                <a class="nav-link active" href="#home">Home</a>
-                <a class="nav-link" href="#projects">Projects</a>
-                <a class="nav-link" href="#about">About Me</a>
-                <a class="nav-link" href="#experience">Experience</a>
-                <a class="nav-link" href="#contact">Contact</a>
+                <div>
+                    <a class="nav-link active nav-underline d-inline-block" href="#home">Home</a>
+                </div>
+                <div>
+                    <a class="nav-link nav-underline d-inline-block" href="#projects">Projects</a>
+                </div>
+                <div>
+                    <a class="nav-link nav-underline d-inline-block" href="#about">About Me</a>
+                </div>
+                <div>
+                    <a class="nav-link nav-underline d-inline-block" href="#experience">Experience</a>
+                </div>
+                <div>
+                    <a class="nav-link nav-underline d-inline-block" href="#contact">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -147,6 +159,9 @@
     <div id="about" class="d-flex align-items-center section-padding">
         <div class="container">
             <div class="row text-center align-items-center about-padding-x">
+                <div class="col-4 img-wrapper">
+                    <img src="images/donald-img.jpg" alt="">
+                </div>
                 <div class="col-8">
                     <h3>About Me</h3>
                     <hr class="header-underline">
@@ -176,11 +191,11 @@
                         <i class="fab fa-html5" title="HTML5"></i>
                         <i class="fab fa-js" title="Javascript ES6"></i>
                         <i class="fab fa-bootstrap" title="Bootstrap4"></i>
-                        <i class="fab fa-node"></i>
-                        <i class="fab fa-react"></i>
+                        <!-- <i class="fab fa-node"></i>
+                        <i class="fab fa-react"></i> -->
 
                         <!-- MongoDB icon -->
-                        <span title="MongoDB">
+                        <!-- <span title="MongoDB">
                             <svg id="mongodb-img" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="70"
                                 height="70" viewBox="0 0 48 48" style=" fill:#000000;">
                                 <path fill="#5d4037"
@@ -194,12 +209,9 @@
                                     d="M24,10c0,0-6,5-6,13c0,5.2,3.3,8.5,5,10l1-3l1,3c1.7-1.5,5-4.8,5-10C30,15,24,10,24,10z">
                                 </path>
                                 <path fill="#81c784" d="M24,10c0,0-6,5-6,13c0,5.2,3.3,8.5,5,10l1-3V10z"></path>
-                            </svg></span>
-
+                            </svg>
+                        </span> -->
                     </div>
-                </div>
-                <div class="col-4 img-wrapper">
-                    <img src="images/donald-img.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -239,6 +251,7 @@
                                 <h4 class="timeline-title">Production Engineer</h4>
                                 <h6><em>Maintenance, PLC Programming</em></h6>
                                 <h6>Yamashin Cebu Filter Manufacturing. Corporation. (2017)</h6>
+                                <br>
                             </div>
                             <div class="timeline-body">
                                 <p>Machine Repair, Commissioning, PLC programming for function improvements and
@@ -246,24 +259,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <!-- <div class="timeline-badge warning"><i class="fas fa-laptop"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá ,
-                                    depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum
-                                    girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
-                                    pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i
-                                    pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num
-                                    gostis.</p>
-                            </div>
-                        </div> -->
-                    </li>
                 </ul>
-                <!--  -->
             </div>
         </div>
     </section>
@@ -295,14 +291,39 @@
                         <textarea class="form-control px-3 py-4" cols="30" rows="10"
                             placeholder="Write a Message"></textarea>
                     </div>
+
+                    <div class="form-group d-flex justify-content-end">
+                        <button class="btn btn-send-msg btn-lg">Send</button>
+                    </div>
                 </div>
 
                 <div class="col-12 col-md-5 text-left pl-md-5">
-                    <h4 class="mb-4">My Contact Details</h4>
+                    <h4 class="mb-5">My Contact Details</h4>
+                    <div class="d-flex contact-wrap">
+                        <i class="fas fa-envelope"></i>&nbsp ecedonaldlabajojr@gmail.com
+                    </div>
+                    <div class="d-flex contact-wrap">
+                        <i class="fas fa-phone-square-alt"></i>&nbsp +639065279640
+                    </div>
+
+                    <div class="d-flex contact-wrap">
+                        <i class="fas fa-map-marker-alt"></i>&nbsp La Aldea Mactan, Brgy Babag, Lapu-Lapu City.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <footer class="container-fluid py-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-12">
+                <p>Designed & Built by Donald Labajo Jr.</p>
+                <p class="mb-0">Copyright ©2020 All Rights Reserved</p>
+            </div>
+        </div>
+
+    </footer>
 
 
     <!-- JQUERY & POPPER.JS for BOOTSTRAP4 -->
