@@ -130,6 +130,18 @@ a:hover {
     color: rgba(255, 255, 255, .8);
 }
 
+@media (max-width: 768px) {
+    .landing-text {
+        left: 10vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .landing-text {
+        left: 15px;
+    }
+}
+
 .landing-text h1 {
     font-family: 'Ubuntu', sans-serif;
     text-overflow: 500;
