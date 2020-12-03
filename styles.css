@@ -142,7 +142,7 @@ a:hover {
 /* ---- Projects ---- */
 
 .card-padding {
-    padding: 3rem 2rem;
+    padding: 3rem 3.5rem;
 }
 
 .card {
@@ -190,9 +190,9 @@ a:hover {
 
 /* ABOUT ME */
 #about {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/keyboard-img.jpg") no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/keyboard-img.jpg") no-repeat center center;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     display: relative;
     color: rgba(255, 255, 255, 0.7) !important;
@@ -210,6 +210,14 @@ a:hover {
     width: 100%;
     filter: grayscale(10%);
     border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    #about img {
+        width: 50%;
+        border-radius: 50%;
+        margin: 50px 0;
+    }
 }
 
 .fab {
@@ -494,6 +502,6 @@ footer {
     background-color: rgb(52, 59, 64);
 }
 
-p:hover {
+footer p:hover {
     color: #bac964;
 }
