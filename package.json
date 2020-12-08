@@ -1,0 +1,24 @@
+{
+  "name": "webdev_portfolio",
+  "version": "1.0.0",
+  "description": "Web Developer Landing Page",
+  "main": "public/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecedonaldlabajojr/Portfolio.git"
+  },
+  "author": "Donald P. Labajo Jr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecedonaldlabajojr/Newsletter-Signup/issues"
+  },
+  "homepage": "https://github.com/ecedonaldlabajojr/Newsletter-Signup#readme",
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.25",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
