@@ -481,6 +481,7 @@ a:hover {
 #certifications h4 {
     color: #bac964;
     margin-bottom: 1px solid #bac964;
+    transition: 0.3s ease;
 }
 
 #certifications img {
@@ -492,17 +493,13 @@ a:hover {
     padding: 2px;
 }
 
-.certificate:hover {
-    cursor: zoom-in;
-}
-
 .bootcamp-ongoing {
     position: relative;
     top: -65%;
 }
 
 .bootcamp-ongoing h4 {
-    color:orange !important;
+    color: orange;
     font-size: 4rem;
     transform: rotate(-45deg);
     letter-spacing: 1rem;
@@ -511,6 +508,48 @@ a:hover {
 .mean-img {
     opacity: 0.2;
 }
+
+/*  */
+
+.img__description {
+    position: absolute;
+    width: 100%;
+    color: azure;
+    top: 80%;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.4s ease;
+    font-size: 1.3rem;
+}
+
+.certificate:hover .img__description {
+    top: 50%;
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #222;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.certificate:hover .content-overlay {
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.certificate:hover .bootcamp-ongoing>h4 {
+    color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/*  */
 
 
 
