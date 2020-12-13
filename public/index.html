@@ -19,6 +19,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
 
+    <!-- Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon-32x32.png">
 
@@ -32,6 +35,28 @@
 </head>
 
 <body data-spy="scroll" data-target="#navigation" data-offset="50">
+    <!-- MODAL -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <h4 class="modal-title w-100" id="modal-h4">Awesome!</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center" id="modal-p">Your message has been sent! <br> I'll be in touch with you soon.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+
     <!-- NAVIGATION BAR -->
     <nav class="navbar navbar-expand-lg navbar-bg fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -325,24 +350,26 @@
                 </div>
                 <div class="col-12 col-md-7 text-left px-4">
                     <h4 class="mb-5">Get In Touch</h4>
-                    <form action="/" method="POST">
-                        <div class="form-group">
-                            <input type="text" class="form-control px-3 py-4" placeholder="Your Name" name="name">
+                    <form action="/" id="form-details">
+                        <div class="form-group" id="contact-form">
+                            <input type="text" class="form-control px-3 py-4" placeholder="Your Name" id="name"
+                                minlength="3" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control px-3 py-4" placeholder="Your Email" name="email">
+                            <input type="email" class="form-control px-3 py-4" placeholder="Your Email" id="email"
+                                required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control px-3 py-4" placeholder="Your Phone Number"
-                                name="phone">
+                            <input type="tel" class="form-control px-3 py-4" placeholder="Your Phone Number" id="phone"
+                                required>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control px-3 py-4" cols="30" rows="10" placeholder="Write a Message"
-                                name="message"></textarea>
+                                id="message"></textarea>
                         </div>
 
                         <div class="form-group d-flex justify-content-end">
-                            <button class="btn btn-send-msg btn-lg">Send</button>
+                            <button type="submit" class="btn btn-send-msg btn-lg" id="btn-send-contact">Send</button>
                         </div>
                     </form>
                 </div>
@@ -377,12 +404,14 @@
 
 
     <!-- JQUERY & POPPER.JS for BOOTSTRAP4 -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"> -->
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
+
 
     <!-- NodeJS App -->
     <script src="app.js"></script>
@@ -396,6 +425,53 @@
                     $('nav').removeClass('nav-animate');
                 }
             })
+        });
+
+        $("#form-details").submit(function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                global: false,
+                type: "POST",
+                url: "/",
+                dataType: "text",
+                data: {
+                    name: $("#name").val(),
+                    email: $("#email").val(),
+                    phone: $("#phone").val(),
+                    message: $("#message").val()
+                },
+                success: function (result) {
+                    console.log(result);
+                    var json_result = JSON.parse(result);
+                    if (json_result.err_count == 0) {
+                        $("#modal-h4").text("Awesome!");
+                        $("#modal-p").text("Your message has been sent.");
+                        $(".icon-box").removeClass("modal-icon-box-red");
+                        $(".icon-box").addClass("modal-icon-box-green");
+                        $("#form-details").trigger("reset");
+                    } else {
+                        if (json_result.err_code ==
+                            "ERROR_CONTACT_EXISTS") {
+                            $("#modal-h4").text("Oops!");
+                            $("#modal-p").text(
+                                "Contact Already Exist. Please try another email.");
+                            $(".icon-box").removeClass("modal-icon-box-green");
+                            $(".icon-box").addClass("modal-icon-box-red");
+                        } else if (json_result.err_code ==
+                            "ERROR_GENERIC") {
+                            $("#modal-h4").text("Oops!");
+                            $("#modal-p").text("Something went wrong.");
+                            $(".icon-box").removeClass("modal-icon-box-green");
+                            $(".icon-box").addClass("modal-icon-box-red");
+                        };
+                    }
+                    $("#myModal").modal("show");
+                },
+                error: function (request, status, error) {
+                    serviceError();
+                }
+            });
         });
     </script>
     </div>

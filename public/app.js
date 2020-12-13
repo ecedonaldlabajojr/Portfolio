@@ -6,10 +6,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
-
 app.use(express.static("public"));
-
 
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
@@ -24,6 +21,7 @@ app.post("/", function (req, res) {
         server: "us7",
     });
 
+
     const run = async () => {
         const response = await client.lists.batchListMembers("e5399f1bf4", {
             members: [{
@@ -35,18 +33,28 @@ app.post("/", function (req, res) {
                     MESSAGE: req.body.message,
                     PHONE: req.body.phone,
                 }
-
             }],
         });
         console.log(response);
+        var error_code;
+        if (response.error_count == 0) {
+            error_code = "";
+        } else {
+            error_code = response.errors[0].error_code;
+        }
+        var res_json = {
+            err_code: error_code,
+            err_count: response.error_count
+        }
+        res.send(res_json);
+
+
     };
     run();
-    res.send("RECEIVED!");
+    // res.send("RECEIVED!");
 });
 
-
-
-app.listen(process.env.PORT || 3000, function () {
+app.listen(3000, function () {
     console.log("Server started on port: 3000");
 });
 
