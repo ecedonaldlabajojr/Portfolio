@@ -41,7 +41,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="icon-box">
-                        <i class="material-icons">&#xE876;</i>
+                        <i class="material-icons">check</i>
                     </div>
                     <h4 class="modal-title w-100" id="modal-h4">Awesome!</h4>
                 </div>
@@ -50,7 +50,7 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                    <button class="btn btn-success btn-block" data-dismiss="modal" id="modal-btn-ok">OK</button>
                 </div>
             </div>
         </div>
@@ -99,8 +99,8 @@
     <!-- PROJECTS -->
     <div id="projects" class="container section-padding">
         <div class="row text-center">
-            <h3 class="col-12">Projects</h3>
-            <hr class="header-underline">
+            <h3 class="col-12 project-header">Projects</h3>
+            <hr class="header-underline project-header">
             <div class="row">
                 <div class="col-12 col-md-4 card-padding">
                     <div class="card card-shadow">
@@ -189,7 +189,7 @@
                 <div class="col-12 col-md-4 img-wrapper">
                     <img src="images/donald-img.jpg" alt="">
                 </div>
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-8" id="aboutme-details">
                     <h3>About Me</h3>
                     <hr class="header-underline">
                     <br>
@@ -252,7 +252,7 @@
                 <h3 class="col-12">Experience &nbsp</h3>
                 <hr class="header-underline">
 
-                <!--  -->
+                <!-- Timeline Experience -->
                 <ul class="timeline mt-4">
                     <li>
                         <div class="timeline-badge primary"><i class="fas fa-laptop-code"></i></i></div>
@@ -293,7 +293,7 @@
                 <h4 class="col-12 pl-1"><u>Certifications</u></h4>
                 <div class="row mt-5 mx-0">
 
-                    <!--  -->
+                    <!-- Coursera Bootstrap Certificate Column -->
                     <div class="col-12 col-md-3 certificate text-center">
                         <a href="certif/cert-coursera-bootstrap4.pdf" target="_blank">
                             <div class="content-overlay"></div>
@@ -301,13 +301,8 @@
                             <p class="img__description">Bootstrap4 (Coursera)</p>
                         </a>
                     </div>
-                    <!--  -->
 
-
-
-                    <!-- <div class="col-12 col-md-3 certificate">
-                        <img src="images/bootstrap4-thumbnail.JPG" alt="coursera-bootstrap4">
-                    </div> -->
+                    <!-- Udemy Python Certificate Column -->
                     <div class="col-12 col-md-3 certificate text-center">
                         <a href="certif/cert-udemy-python.pdf" target="_blank">
                             <div class="content-overlay"></div>
@@ -315,6 +310,8 @@
                             <p class="img__description">Python: Zero to Hero<br>(Udemy)</p>
                         </a>
                     </div>
+
+                    <!-- Udemy Java Certificate Column -->
                     <div class="col-12 col-md-3 certificate text-center">
                         <a href="certif/cert-java.pdf" target="_blank">
                             <div class="content-overlay"></div>
@@ -323,6 +320,7 @@
                         </a>
                     </div>
 
+                    <!-- Udemy MERN Full Stack Web Developer Certificate Column -->
                     <div class="col-12 col-md-3 certificate text-center">
                         <div class="content-overlay"></div>
                         <img class="mean-img" src="images/mern-thumbnail.jpg" alt="">
@@ -340,7 +338,6 @@
 
 
     <!-- CONTACT -->
-
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="row">
@@ -350,6 +347,8 @@
                 </div>
                 <div class="col-12 col-md-7 text-left px-4">
                     <h4 class="mb-5">Get In Touch</h4>
+
+                    <!-- FORM FOR CONTACT -->
                     <form action="/" id="form-details">
                         <div class="form-group" id="contact-form">
                             <input type="text" class="form-control px-3 py-4" placeholder="Your Name" id="name"
@@ -391,7 +390,6 @@
         </div>
     </section>
 
-
     <footer class="container-fluid py-5 mt-5">
         <div class="row justify-content-center text-center">
             <div class="col-12">
@@ -412,6 +410,8 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
 
+    <!-- Scroll Reveal  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- NodeJS App -->
     <script src="app.js"></script>
@@ -427,9 +427,12 @@
             })
         });
 
+
+        // Form Submit Ajax
         $("#form-details").submit(function (event) {
             event.preventDefault();
 
+            // Prevent Page from refreshing upon form submission
             $.ajax({
                 global: false,
                 type: "POST",
@@ -441,6 +444,9 @@
                     phone: $("#phone").val(),
                     message: $("#message").val()
                 },
+
+                // If server returns result without any error_code or error_count, manipulate DOM
+                // to display Success Modal
                 success: function (result) {
                     console.log(result);
                     var json_result = JSON.parse(result);
@@ -449,7 +455,10 @@
                         $("#modal-p").text("Your message has been sent.");
                         $(".icon-box").removeClass("modal-icon-box-red");
                         $(".icon-box").addClass("modal-icon-box-green");
+                        $("#modal-btn-ok").addClass("btn-success");
+                        $("#modal-btn-ok").removeClass("btn-danger");
                         $("#form-details").trigger("reset");
+                        $(".material-icons").text("check");
                     } else {
                         if (json_result.err_code ==
                             "ERROR_CONTACT_EXISTS") {
@@ -458,12 +467,18 @@
                                 "Contact Already Exist. Please try another email.");
                             $(".icon-box").removeClass("modal-icon-box-green");
                             $(".icon-box").addClass("modal-icon-box-red");
+                            $("#modal-btn-ok").removeClass("btn-success");
+                            $("#modal-btn-ok").addClass("btn-danger");
+                            $(".material-icons").text("cancel");
                         } else if (json_result.err_code ==
                             "ERROR_GENERIC") {
                             $("#modal-h4").text("Oops!");
                             $("#modal-p").text("Something went wrong.");
                             $(".icon-box").removeClass("modal-icon-box-green");
                             $(".icon-box").addClass("modal-icon-box-red");
+                            $("#modal-btn-ok").removeClass("btn-success");
+                            $("#modal-btn-ok").addClass("btn-danger");
+                            $(".material-icons").text("cancel");
                         };
                     }
                     $("#myModal").modal("show");
@@ -472,6 +487,60 @@
                     serviceError();
                 }
             });
+        });
+
+
+
+        // SCROLL REVEAL ---> Landing Text
+        ScrollReveal().reveal('.landing-text', {
+            origin: 'bottom',
+            duration: 2000,
+            distance: '200px'
+        });
+
+        // SCROLL REVEAL ---> PROJECTS HEADER
+        ScrollReveal().reveal('.project-header', {
+            origin: 'right',
+            distance: '100px',
+            duration: 2000
+        });
+
+
+        // SCROLL REVEAL ---> NAVIGATION BAR
+        if (($(window).width() > 992)) {
+            ScrollReveal().reveal('#navbarNavAltMarkup', {
+                origin: 'right',
+                distance: '50px',
+                duration: 2000
+            });
+        };
+
+        // SCROLL REVEAL ---> ABOUT ME - IMAGE
+        ScrollReveal().reveal('.img-wrapper', {
+            origin: 'left',
+            distance: '50px',
+            duration: 2000
+        });
+
+        // SCROLL REVEAL ---> ABOUT ME - COLUMN DETAILS
+        ScrollReveal().reveal('#aboutme-details', {
+            origin: 'right',
+            distance: '50px',
+            duration: 2000
+        });
+
+        // SCROLL REVEAL ---> TIMELINE EXPERIENCE
+        ScrollReveal().reveal('.timeline', {
+            origin: 'bottom',
+            distance: '100px',
+            duration: 2000
+        });
+
+        // SCROLL REVEAL ---> CONTACT
+        ScrollReveal().reveal('#contact', {
+            origin: 'bottom',
+            distance: '70px',
+            duration: 2000
         });
     </script>
     </div>

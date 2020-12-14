@@ -683,7 +683,6 @@ footer p:hover {
 .modal-confirm .btn {
     color: #fff;
     border-radius: 4px;
-    background: #82ce34;
     text-decoration: none;
     transition: all 0.4s;
     line-height: normal;
@@ -692,6 +691,5 @@ footer p:hover {
 
 .modal-confirm .btn:hover,
 .modal-confirm .btn:focus {
-    background: #6fb32b;
     outline: none;
 }
