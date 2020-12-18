@@ -158,7 +158,7 @@ a:hover {
 /* ---- Projects ---- */
 
 .card-padding {
-    padding: 3rem 3.5rem;
+    padding: 3rem 3.2rem;
 }
 
 .card {
@@ -440,6 +440,10 @@ a:hover {
 }
 
 @media (max-width: 767px) {
+    .timeline-panel {
+        margin-right: 10px;
+    }
+
     ul.timeline:before {
         left: 40px;
     }
@@ -493,12 +497,12 @@ a:hover {
     padding: 2px;
 }
 
-.bootcamp-ongoing {
+.ongoing {
     position: relative;
     top: -65%;
 }
 
-.bootcamp-ongoing h4 {
+.ongoing h4 {
     color: orange;
     font-size: 4rem;
     transform: rotate(-45deg);
@@ -519,10 +523,16 @@ a:hover {
     font-weight: 600;
     opacity: 0;
     transition: 0.4s ease;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .certificate:hover .img__description {
+    top: 50%;
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+.card:hover .img__description {
     top: 50%;
     opacity: 1;
     transition: 0.4s ease;
@@ -534,7 +544,7 @@ a:hover {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.75);
     border: 2px solid #222;
     opacity: 0;
     transition: 0.5s ease;
@@ -545,7 +555,12 @@ a:hover {
     transition: 0.5s ease;
 }
 
-.certificate:hover .bootcamp-ongoing>h4 {
+.card:hover .content-overlay {
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.certificate:hover .ongoing>h4 {
     color: rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -596,10 +611,22 @@ a:hover {
 /* FOOTER */
 footer {
     background-color: rgb(52, 59, 64);
+    padding: 4rem 2.5rem;
 }
 
 footer p:hover {
     color: #bac964;
+}
+
+footer .social-media-icon {
+    font-size: 3rem;
+    margin: 3rem 3rem 2.5rem;
+}
+
+@media (min-width: 1111px) {
+    footer .social-media-icon {
+        display: none;
+    }
 }
 
 /* MODAL */
@@ -692,4 +719,41 @@ footer p:hover {
 .modal-confirm .btn:hover,
 .modal-confirm .btn:focus {
     outline: none;
+}
+
+
+/* Social Media Links */
+.social-media-links {
+    position: fixed;
+    bottom: 50px;
+    height: 350px;
+    left: 1vw;
+    width: auto;
+    right: auto;
+}
+
+.social-media-ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.social-media-ul::after {
+    content: "";
+    width: 1px;
+    height: 200px !important;
+    margin: 0px auto;
+    margin-top: 10px;
+    background-color: #bac964;
+    display: block;
+}
+
+@media (max-width: 1110px) {
+    .social-media-links {
+        visibility: hidden !important;
+    }
+}
+
+.social-media-icon {
+    font-size: 2rem;
+    color: #bac964;
 }
