@@ -539,69 +539,69 @@
             });
         });
 
-        // $(window).load(function () {
-        // SCROLL REVEAL ---> Landing Text
-        ScrollReveal().reveal('.landing-text', {
-            origin: 'bottom',
-            duration: 3000,
-            distance: '300px'
-        });
+        $(window).on("load", function () {
+            // SCROLL REVEAL ---> Landing Text
+            ScrollReveal().reveal('.landing-text', {
+                origin: 'bottom',
+                duration: 3000,
+                distance: '300px'
+            });
 
-        // SCROLL REVEAL ---> PROJECTS HEADER
-        ScrollReveal().reveal('.project-header', {
-            origin: 'right',
-            distance: '100px',
-            duration: 2500
-        });
+            // SCROLL REVEAL ---> PROJECTS HEADER
+            ScrollReveal().reveal('.project-header', {
+                origin: 'right',
+                distance: '100px',
+                duration: 2500
+            });
 
 
-        // SCROLL REVEAL ---> NAVIGATION BAR
-        if (($(window).width() > 992)) {
-            ScrollReveal().reveal('#navigation', {
+            // SCROLL REVEAL ---> NAVIGATION BAR
+            if (($(window).width() > 992)) {
+                ScrollReveal().reveal('#navigation', {
+                    origin: 'right',
+                    distance: '50px',
+                    duration: 3000,
+                    delay: 1000
+                });
+            };
+
+            // SCROLL REVEAL ---> ABOUT ME - IMAGE
+            ScrollReveal().reveal('.img-wrapper', {
+                origin: 'left',
+                distance: '50px',
+                duration: 2500
+            });
+
+            // SCROLL REVEAL ---> ABOUT ME - COLUMN DETAILS
+            ScrollReveal().reveal('#aboutme-details', {
                 origin: 'right',
                 distance: '50px',
-                duration: 3000,
+                duration: 2500
+            });
+
+            // SCROLL REVEAL ---> TIMELINE EXPERIENCE
+            ScrollReveal().reveal('.timeline', {
+                origin: 'bottom',
+                distance: '100px',
+                duration: 2500
+            });
+
+            // SCROLL REVEAL ---> CONTACT
+            ScrollReveal().reveal('#contact', {
+                origin: 'bottom',
+                distance: '150px',
+                duration: 2500
+            });
+
+
+            // SCROLL REVEAL ---> CONTACT
+            ScrollReveal().reveal('.social-media-links', {
+                origin: 'left',
+                distance: '50px',
+                duration: 2500,
                 delay: 1000
             });
-        };
-
-        // SCROLL REVEAL ---> ABOUT ME - IMAGE
-        ScrollReveal().reveal('.img-wrapper', {
-            origin: 'left',
-            distance: '50px',
-            duration: 2500
         });
-
-        // SCROLL REVEAL ---> ABOUT ME - COLUMN DETAILS
-        ScrollReveal().reveal('#aboutme-details', {
-            origin: 'right',
-            distance: '50px',
-            duration: 2500
-        });
-
-        // SCROLL REVEAL ---> TIMELINE EXPERIENCE
-        ScrollReveal().reveal('.timeline', {
-            origin: 'bottom',
-            distance: '100px',
-            duration: 2500
-        });
-
-        // SCROLL REVEAL ---> CONTACT
-        ScrollReveal().reveal('#contact', {
-            origin: 'bottom',
-            distance: '150px',
-            duration: 2500
-        });
-
-
-        // SCROLL REVEAL ---> CONTACT
-        ScrollReveal().reveal('.social-media-links', {
-            origin: 'left',
-            distance: '50px',
-            duration: 2500,
-            delay: 1000
-        });
-        // });
     </script>
     </div>
 
