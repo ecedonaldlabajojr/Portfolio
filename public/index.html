@@ -439,6 +439,10 @@
 
     </div>
 
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
 
     <!-- JQUERY & POPPER.JS for BOOTSTRAP4 -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -459,6 +463,10 @@
     <script src="app.js"></script>
 
     <script>
+        $(window).on("load", function () {
+            $("#preloader").delay(1000).fadeOut("fast");
+        });
+
         $(document).ready(function () {
             $(window).scroll(function () {
                 if ($(document).scrollTop() > 100) {
@@ -466,7 +474,7 @@
                 } else {
                     $('nav').removeClass('nav-animate');
                 }
-            })
+            });
         });
 
 
@@ -531,13 +539,11 @@
             });
         });
 
-
-
         // SCROLL REVEAL ---> Landing Text
         ScrollReveal().reveal('.landing-text', {
             origin: 'bottom',
             duration: 2000,
-            distance: '200px'
+            distance: '300px'
         });
 
         // SCROLL REVEAL ---> PROJECTS HEADER
