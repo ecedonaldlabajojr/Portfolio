@@ -757,3 +757,10 @@ footer .social-media-icon {
     font-size: 2rem;
     color: #bac964;
 }
+
+/* Section Nav Offset */
+section:before {
+    height: 54px;
+    content: "";
+    display: block;
+}
