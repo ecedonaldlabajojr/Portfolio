@@ -50,10 +50,23 @@ h4 {
     letter-spacing: 0.1rem;
 }
 
+.btn-green-border {
+    padding: 8px 26px !important;
+    background-color: #b9ca5700;
+    border: 2px solid #b9ca57;
+    transition: 0.5s ease;
+}
+
+.btn-green-border:hover {
+    color: rgb(45, 45, 45) !important;
+    background-color: #e5fa6f;
+    border: 2px solid #b9ca57;
+    transition: 0.5s ease;
+}
+
 
 .navbar-toggler {
     margin-left: 1.5rem;
-    /* color: rgba(255, 255, 255, 0.5); */
     color: rgba(255, 255, 255, 0.9);
     border-color: rgba(255, 255, 255, 0.5);
 }
@@ -152,6 +165,12 @@ a:hover {
     .landing-text h1 {
         font-size: 320%;
     }
+}
+
+#get-in-touch {
+    margin-top: 30px;
+    padding: 14px 30px !important;
+    font-weight: 600;
 }
 
 
@@ -506,7 +525,7 @@ a:hover {
 .ongoing h4 {
     color: orange;
     font-size: 4rem;
-    transform: rotate(-45deg);
+    transform: rotate(-40deg);
     letter-spacing: 1rem;
 }
 
@@ -605,6 +624,12 @@ a:hover {
     text-transform: uppercase;
     padding: 0.8rem 3.5rem;
     color: #333;
+    transition: 0.5s ease;
+}
+
+.btn-send-msg:hover {
+    background-color: #abc034;
+    transition: 0.5s ease;
 }
 
 
@@ -802,7 +827,7 @@ section:before {
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color:  #97aa2d;
+    border-top-color: #97aa2d;
     animation: spin 3s linear infinite;
 }
 

@@ -80,6 +80,12 @@
                 <div>
                     <a class="nav-link nav-underline d-inline-block" href="#contact">Contact</a>
                 </div>
+                <div>
+                    <a class="nav-link d-inline-block btn btn-info btn-large btn-green-border"
+                        href="docs/Donald Labajo Jr CV - Web Developer.pdf" target="_blank">
+                        Resume
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -91,7 +97,10 @@
                 <h6>Hello, my name is</h6>
                 <h1>Donald Labajo Jr.</h1>
                 <h2>A Web Developer.</h2>
-                <br><br>
+                <br>
+                <a class="btn btn-info btn-large btn-green-border" href="#contact" id="get-in-touch">
+                    Get in Touch
+                </a>
             </div>
         </div>
     </div>
@@ -283,7 +292,7 @@
                             <div class="timeline-body">
                                 <p>Hardware Programming (PLC- Programmable Logic Controllers), HMI(Human-Machine
                                     Interface) Graphics Development. SCADA(Supervisory Control And Data Acquisition)
-                                    Systems, Database(SQL) Setup, Scripting using Python3.
+                                    Systems, Scripting using Python3.
                                 </p>
                             </div>
                         </div>
@@ -312,7 +321,7 @@
 
                     <!-- Coursera Bootstrap Certificate Column -->
                     <div class="col-12 col-md-6 col-lg-3 certificate text-center">
-                        <a href="certif/cert-coursera-bootstrap4.pdf" target="_blank">
+                        <a href="docs/cert-coursera-bootstrap4.pdf" target="_blank">
                             <div class="content-overlay"></div>
                             <img src="images/bootstrap4-thumbnail.JPG" alt="coursera-bootstrap4">
                             <p class="img__description">Bootstrap4 (Coursera)</p>
@@ -321,7 +330,7 @@
 
                     <!-- Udemy Python Certificate Column -->
                     <div class="col-12 col-md-6 col-lg-3 certificate text-center">
-                        <a href="certif/cert-udemy-python.pdf" target="_blank">
+                        <a href="docs/cert-udemy-python.pdf" target="_blank">
                             <div class="content-overlay"></div>
                             <img src="images/python-thumbnail.JPG" alt="coursera-bootstrap4">
                             <p class="img__description">Python: Zero to Hero<br>(Udemy)</p>
@@ -330,10 +339,10 @@
 
                     <!-- Udemy Java Certificate Column -->
                     <div class="col-12 col-md-6 col-lg-3 certificate text-center">
-                        <a href="certif/cert-java.pdf" target="_blank">
+                        <a href="docs/cert-java.pdf" target="_blank">
                             <div class="content-overlay"></div>
                             <img src="images/java1-thumbnail.JPG" alt="cert-java">
-                            <p class="img__description">Bootstrap4 - Coursera</p>
+                            <p class="img__description">Java (Udemy)</p>
                         </a>
                     </div>
 
@@ -355,56 +364,59 @@
 
 
     <!-- CONTACT -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 mb-5 text-center">
-                    <h3>CONTACT</h3>
-                    <hr class="header-underline">
-                </div>
-                <div class="col-12 col-md-7 text-left px-4">
-                    <h4 class="mb-5">Get In Touch</h4>
-
-                    <!-- FORM FOR CONTACT -->
-                    <form action="/" id="form-details">
-                        <div class="form-group" id="contact-form">
-                            <input type="text" class="form-control px-3 py-4" placeholder="Your Name" id="name"
-                                minlength="3" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control px-3 py-4" placeholder="Your Email" id="email"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control px-3 py-4" placeholder="Your Phone Number" id="phone"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control px-3 py-4" cols="30" rows="10" placeholder="Write a Message"
-                                id="message"></textarea>
-                        </div>
-
-                        <div class="form-group d-flex justify-content-end">
-                            <button type="submit" class="btn btn-send-msg btn-lg" id="btn-send-contact">Send</button>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="col-12 col-md-5 text-left px-5">
-                    <h4 class="mb-5">My Contact Details</h4>
-                    <div class="d-flex contact-wrap">
-                        <i class="fas fa-envelope"></i>&nbsp ecedonaldlabajojr@gmail.com
+    <section id="contact">
+        <section class="section-padding" id="contact-reveal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mb-5 text-center">
+                        <h3>CONTACT</h3>
+                        <hr class="header-underline">
                     </div>
-                    <div class="d-flex contact-wrap">
-                        <i class="fas fa-phone-square-alt"></i>&nbsp +639065279640
+                    <div class="col-12 col-md-7 text-left px-4">
+                        <h4 class="mb-5">Get In Touch</h4>
+
+                        <!-- FORM FOR CONTACT -->
+                        <form action="/" id="form-details">
+                            <div class="form-group" id="contact-form">
+                                <input type="text" class="form-control px-3 py-4" placeholder="Your Name" id="name"
+                                    minlength="3" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control px-3 py-4" placeholder="Your Email" id="email"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control px-3 py-4" placeholder="Your Phone Number"
+                                    id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control px-3 py-4" cols="30" rows="10"
+                                    placeholder="Write a Message" id="message"></textarea>
+                            </div>
+
+                            <div class="form-group d-flex justify-content-end">
+                                <button type="submit" class="btn btn-send-msg btn-lg"
+                                    id="btn-send-contact">Send</button>
+                            </div>
+                        </form>
                     </div>
 
-                    <div class="d-flex contact-wrap">
-                        <i class="fas fa-map-marker-alt"></i>&nbsp La Aldea Mactan, Brgy Babag, Lapu-Lapu City.
+                    <div class="col-12 col-md-5 text-left px-5">
+                        <h4 class="mb-5">My Contact Details</h4>
+                        <div class="d-flex contact-wrap">
+                            <i class="fas fa-envelope"></i>&nbsp ecedonaldlabajojr@gmail.com
+                        </div>
+                        <div class="d-flex contact-wrap">
+                            <i class="fas fa-phone-square-alt"></i>&nbsp +639065279640
+                        </div>
+
+                        <div class="d-flex contact-wrap">
+                            <i class="fas fa-map-marker-alt"></i>&nbsp La Aldea Mactan, Brgy Babag, Lapu-Lapu City.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </section>
 
     <footer class="container-fluid">
@@ -469,7 +481,7 @@
 
         $(document).ready(function () {
             $(window).scroll(function () {
-                if ($(document).scrollTop() > 100) {
+                if ($(document).scrollTop() > 50) {
                     $('nav').addClass('nav-animate');
                 } else {
                     $('nav').removeClass('nav-animate');
@@ -587,7 +599,7 @@
             });
 
             // SCROLL REVEAL ---> CONTACT
-            ScrollReveal().reveal('#contact', {
+            ScrollReveal().reveal('#contact-reveal', {
                 origin: 'bottom',
                 distance: '150px',
                 duration: 2500
