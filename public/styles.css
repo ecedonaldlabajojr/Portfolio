@@ -192,6 +192,12 @@ a:hover {
     text-decoration: none;
 }
 
+.view-code a {
+    font-size: 18px !important;
+    margin-top: 20px;
+    width: 200px;
+}
+
 
 #projects img {
     width: 100%;
