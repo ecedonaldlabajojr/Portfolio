@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const client = require("@mailchimp/mailchimp_marketing");
@@ -17,7 +18,7 @@ app.post("/", function (req, res) {
 
     // Save post data to MailChimp!
     client.setConfig({
-        apiKey: "98ed5adc72311545ce8cd3e374bdf5b8-us7",
+        apiKey: process.env.MAILCHIMP_APIKEY,
         server: "us7",
     });
 
